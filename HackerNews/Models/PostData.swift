@@ -24,5 +24,5 @@ struct Post: Decodable, Identifiable //Identifiable allows list to recognize the
     let objectID: String
     let points: Int
     let title: String
-    let url: String
+    let url: String?
 }
