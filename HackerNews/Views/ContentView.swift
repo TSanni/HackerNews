@@ -12,12 +12,16 @@ struct ContentView: View {
     @ObservedObject var networkManager = NetworkManager()
     
     var body: some View {
-        NavigationView {
+        
+        NavigationView
+        {
             
             List(networkManager.posts) { post in
-                NavigationLink(destination: DetailView(url: post.url)) {
+                NavigationLink(destination: DetailView(url: post.url))
+                {
                     
-                    HStack {
+                    HStack
+                    {
                         Text(String(post.points))
                         Text(post.title)
                     }
@@ -25,8 +29,9 @@ struct ContentView: View {
                 
                 
             }
-            .navigationBarTitle("Hacker News")
+            .navigationTitle("Hacker News")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
             self.networkManager.fetchData()
         }

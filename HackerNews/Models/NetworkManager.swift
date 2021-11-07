@@ -31,7 +31,7 @@ class NetworkManager: ObservableObject
                             DispatchQueue.main.async {
                                 self.posts = results.hits
                             }
-                            self.posts = results.hits
+                            
                         }
                         catch
                         {
